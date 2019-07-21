@@ -23,7 +23,7 @@ b = 0
 w = [0,0]
 x = [(-1, 1),(0, -1),(10, 1)]
 y = [1,-1,1]
-outputs = [perceptron(w,x[0],b),perceptron(w,x[1],b),perceptron(w,x[2],b)]
+outputs = [perceptron(w,e,b) for e in x]
 size = len(y)
 turn = 0
 
@@ -37,7 +37,7 @@ while not vecequal(y,outputs):
 		b = b + y[turn]
 	
 	turn = (turn + 1) % size
-	raw_input("Press Enter to continue...")
+	input("Press Enter to continue...")
 
 print("CONVERGENCE REACHED!")
 print(turn,w,b)

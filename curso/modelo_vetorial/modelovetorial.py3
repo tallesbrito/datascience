@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import scipy.linalg as la
 
 def similaridade(vetor1, vetor2):
@@ -6,12 +7,12 @@ def similaridade(vetor1, vetor2):
 
 #interesses correspondem à: (comédia, ação, drama, horror, romance)
 
-interesses = {"João": (3,4,4,1,4),
+interesses = pd.Series({"João": (3,4,4,1,4),
 		   "Maria": (4,3,5,1,5),
 		   "Joaquim": (2,5,1,3,1),
-		   "José": (1,1,5,1,1)}
+		   "José": (1,1,5,1,1)})
 
-meus_interesses = (1,1,4,1,2)
+meus_interesses = np.array((1,1,4,1,2))
 
 classificacao = [(nome, similaridade(interesses[nome],meus_interesses)) for nome in interesses.keys()]
 

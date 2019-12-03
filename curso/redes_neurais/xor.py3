@@ -14,8 +14,8 @@ Y = np.array([[0],[1],[1],[0]])
 
 #Define rede neural com 2 entradas, 2 neurônios na camada oculta, 1 neurônio de saída
 model = Sequential()
-model.add(Dense(2, input_dim=2, use_bias=True, activation='sigmoid'))
-model.add(Dense(1, use_bias=True, activation='sigmoid'))
+model.add(Dense(2, input_dim=2, activation='sigmoid'))
+model.add(Dense(1, activation='sigmoid'))
 
 #Taxa de aprendizado é 0.1
 sgd = SGD(lr=0.1)

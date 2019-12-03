@@ -10,6 +10,7 @@ feature_cols = ['panorama','temperatura','umidade','ventoso']
 X = data[feature_cols] # Atributos de entrada
 Y = data.jogar #Atributo alvo
 
+# A ÁRVORE GERADA NÃO É IGUAL A DO SLIDE POIS O CONJUNTO DE DADOS SERÁ DIVIDIDO
 # Divide o conjunto de dados para treinamento e teste
 # 70% para treinamento e 30% para teste
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=1) 
@@ -22,7 +23,5 @@ clf = clf.fit(X_train,Y_train)
 
 # Prever respostas para o conjunto de teste
 Y_pred = clf.predict(X_test)
-
+print("Resultados do conjunto de teste:", Y_pred)
 print("Precisão:",metrics.accuracy_score(Y_test, Y_pred))
-
-
